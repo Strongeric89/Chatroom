@@ -39,13 +39,29 @@
 
     </div>
 
-    <form action="index.html" method="post">
+    <form action="index.php" method="post">
 
       <input type="text" placeholder="enter name here" name="name" required>
         <textarea type="text" placeholder="enter message here" name="message"  required></textarea>
-          <input type="submit" name="submit" value="send it">
+          <input type="submit" name="submit" value="click to send">
 
     </form>
+    <?php
+
+        if (isset($_POST['submit'])){
+
+          $name = $_POST['name'];
+          $msg = $_POST['message'];
+
+        $query2 = "INSERT INTO chat (name,msg) VALUES ('$name', '$msg')";
+
+        $run = $con->query($query2);
+
+        if($run){
+          echo "<embed loop='false' scr='sounds/click.wav' hidden='true' autoplay='true'/>";
+        }
+      }
+     ?>
 
     </div>
 
