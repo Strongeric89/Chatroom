@@ -1,3 +1,7 @@
+<?php
+  include 'db/database.php';
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,13 +18,24 @@
 
     <div id="chat_box">
 
+      <?php
+          $query1 = "SELECT * FROM chat ORDER BY id DESC; ";
+          $run = $con->query($query1);
+
+          while($row = $run->fetch_array()) :
+
+       ?>
+
       <div id="chat_data">
 
-        <span>Eric:</span>
-        <span> Hey!</span>
-        <span> 12.44</span>
+
+
+        <span style="color:green"><?php echo $row['name']; ?>:</span>
+        <span  style="color:red"><?php echo $row['msg']; ?></span>
+        <span style="float:right"><?php echo $row['date']; ?></span>
 
       </div>
+    <?php endwhile; ?>
 
     </div>
 
