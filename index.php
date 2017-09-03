@@ -32,7 +32,7 @@
 
         <span style="color:green"><?php echo $row['name']; ?>:</span>
         <span  style="color:red"><?php echo $row['msg']; ?></span>
-        <span style="float:right"><?php echo formatDate($row['date']); ?></span>
+        <span style="float:right"><?php echo $row['date']; ?></span>
 
       </div>
     <?php endwhile; ?>

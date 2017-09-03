@@ -3,7 +3,7 @@
   $host = "localhost";
   $db_name = "chat";
   $user = "root";
-  $password = "";
+  $password = "G+66jFr)d&SX";
 
  $con = new mysqli($host, $user,$password, $db_name);
 
@@ -14,10 +14,7 @@
     echo "db error!";
  }
 
- function formatDate($date){
-    return date('g:i a', strtotime($date));
 
- }
 
 
  ?>
