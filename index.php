@@ -10,33 +10,33 @@
 
     <link rel="stylesheet" href="css/stylesheet.css">
 
+    <script type="text/javascript">
+
+      function ajax(){
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function(){
+          if(request.readyState == 4 && request.status == 200){
+            document.getElementById('chat').innerHTML = request.responseText;
+          }
+        }
+        request.open('GET', 'chat.php', true);
+        request.send();
+
+      }
+
+      setInterval(function(){ajax()}, 1000);
+
+    </script>
+
   </head>
-  <body>
+  <body onload="ajax()">
     <div id="container">
 
 
 
     <div id="chat_box">
-
-      <?php
-          $query1 = "SELECT * FROM chat ORDER BY id DESC; ";
-          $run = $con->query($query1);
-
-          while($row = $run->fetch_array()) :
-
-       ?>
-
-      <div id="chat_data">
-
-
-
-        <span style="color:green"><?php echo $row['name']; ?>:</span>
-        <span  style="color:red"><?php echo $row['msg']; ?></span>
-        <span style="float:right"><?php echo $row['date']; ?></span>
-
-      </div>
-    <?php endwhile; ?>
-
+        <div id="chat"></div>
     </div>
 
     <form action="index.php" method="post">
@@ -58,7 +58,8 @@
         $run = $con->query($query2);
 
         if($run){
-          echo "<embed loop='false' scr='sounds/click.wav' hidden='true' autoplay='true'/>";
+          //echo "<embed loop='false' scr='click.wav' hidden='true' autoplay='true'></embed>";
+          echo "<audio hidden='true' autoplay ><source src='click.wav'></audio>";
         }
       }
      ?>
