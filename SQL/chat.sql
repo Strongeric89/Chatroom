@@ -39,7 +39,7 @@ CREATE TABLE `chat` (
 -- Dumping data for table `chat`
 --
 
-INSERT INTO `chat` (`id`, `name`, `msg`, `date`) VALUES
+INSERT INTO `chat` (`id`, `name`, `msg`, `date1`) VALUES
 (19, 'Batm', 'sd;fkjsdf;j\r\n', '2017-09-03 13:46:21');
 
 --
