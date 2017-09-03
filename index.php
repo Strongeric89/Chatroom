@@ -32,10 +32,11 @@
   </head>
   <body onload="ajax()">
     <div id="container">
+      <h1>Eric Strong's Chat Room</h1>
 
 
 
-    <div id="chat_box">
+    <div id="chat_box" style="overflow:auto;">
         <div id="chat"></div>
     </div>
 
