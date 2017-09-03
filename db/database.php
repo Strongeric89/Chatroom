@@ -6,6 +6,7 @@
   $db_name = "chat";
   $user = "root";
   $password = "G+66jFr)d&SX";
+  //$password = "7512"; //for pi
 
  $con = new mysqli($host, $user,$password, $db_name);
 
